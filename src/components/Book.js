@@ -1,25 +1,24 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
-function Book(props) {
-  const {
-    book: { title, author },
-  } = props;
-  return (
-    <div className="book">
-      <h3 className="bookTitle">{title}</h3>
-      <p className="bookAuthor">{author}</p>
-      <div className="interactions">
-        <button type="submit">Comments</button>
-        <button type="submit">Remove</button>
-        <button type="submit">Edit</button>
-      </div>
-    </div>
-  );
-}
+const Book = ({
+  id, title, author, category,
+}) => (
+  <div id={id} className="book flex-col">
+    <span className="greyText">{category}</span>
+    <span id="title">{title}</span>
+    <span className="blueText">{author}</span>
+  </div>
+);
 
 Book.propTypes = {
-  book: PropTypes.objectOf(PropTypes.string).isRequired,
+  id: PropTypes.number.isRequired,
+  category: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+};
+
+Book.defaultProps = {
+  category: 'Not implemented yet',
 };
 
 export default Book;
