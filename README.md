@@ -7,8 +7,11 @@
 ## Built With
 
 - HTML
+- JavaScript
+- React js
 - Frameworks
 - Technologies used
+
 
 ## Live Demo (if available)
 
