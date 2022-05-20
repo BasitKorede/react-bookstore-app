@@ -1,19 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './header/Header';
-import Books from './books/Books';
-import Categories from './categories/Categories';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './Navbar';
+import Books from './AllBooks';
+import Categories from './Categories';
 
-const App = () => {
-  return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" exact component={Books} />
-        <Route path="/categories" exact component={Categories} />
-      </Routes>
-    </Router>
-  );
-};
+const App = () => (
+  <>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Books />} />
+      <Route path="/allBooks" element={<Books />} />
+      <Route path="/categories" element={<Categories />} />
+    </Routes>
+  </>
+);
 
 export default App;
